@@ -12,6 +12,8 @@ Screenshot of our game:
 
 All of the drawings were made by us.
 
+(Music Added)
+
 ![Screenshot](report/ss2.png)
 
 ** Asaf Koray BOLAT / Berk ÜĞÜDÜR **
