@@ -5,10 +5,14 @@ import Model.Game;
 import Network.Server;
 import View.MainFrame;
 
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
 import java.io.IOException;
+import javax.*;
 
 public class StartGameListener implements ActionListener {
     JTextField[] playerNamesFields;
@@ -17,7 +21,7 @@ public class StartGameListener implements ActionListener {
     int startHandCount;
     JFrame startFrame;
 
-    public StartGameListener(JTextField[] playerNamesFields, int pirateCount, int segmentCount,int startHandCount, JFrame startFrame) {
+    public StartGameListener(JTextField[] playerNamesFields, int pirateCount, int segmentCount, int startHandCount, JFrame startFrame) {
         this.playerNamesFields = playerNamesFields;
         this.pirateCount = pirateCount;
         this.segmentCount = segmentCount;
@@ -28,26 +32,20 @@ public class StartGameListener implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         startFrame.setVisible(false);
-        /* new Thread(new Server()).start();
-
-
-*/
         String[] playerNames = new String[playerNamesFields.length];
-        for(int i=0;i<playerNamesFields.length;i++){
+        for (int i = 0; i < playerNamesFields.length; i++) {
             playerNames[i] = playerNamesFields[i].getText();
         }
-        Board board = new Board(6,segmentCount);
-        Game game = new Game(board,playerNamesFields.length, pirateCount, startHandCount, 30, playerNames);
+        Board board = new Board(6, segmentCount);
+        Game game = new Game(board, playerNamesFields.length, pirateCount, startHandCount, 30, playerNames);
         MainFrame mainFrame;
         game.start();
         try {
             mainFrame = new MainFrame(game);
             mainFrame.setVisible(true);
-            GameController gameController = new GameController(mainFrame,game);
+            GameController gameController = new GameController(mainFrame, game);
         } catch (IOException e1) {
             e1.printStackTrace();
         }
-
-
     }
 }

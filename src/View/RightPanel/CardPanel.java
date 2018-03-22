@@ -10,6 +10,8 @@ import View.Constant.Values;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 public class CardPanel extends JPanel {
@@ -46,11 +48,11 @@ public class CardPanel extends JPanel {
         updatePlayerLabels();
     }
 
-    protected void paintBackgroundElements(Graphics g){
-        g.drawImage(imageManager.getRightBackgroundImage(),0,0,350,600,this);
+    protected void paintBackgroundElements(Graphics g) {
+        g.drawImage(imageManager.getRightBackgroundImage(), 0, 0, 350, 600, this);
     }
 
-    protected void paintCards(Graphics g){
+    protected void paintCards(Graphics g) {
         for (Player player : game.getPlayers()) {
             int cardIndex = 0;
             for (Card card : player.getHand()) {

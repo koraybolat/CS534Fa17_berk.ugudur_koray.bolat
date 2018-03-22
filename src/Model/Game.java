@@ -1,5 +1,8 @@
 package Model;
 
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -39,6 +42,7 @@ public class Game {
 
     public void start() {
         drawStartingCards();
+        musicStart();
     }
 
     private void setupPlayers() {
@@ -195,4 +199,22 @@ public class Game {
     public void setDeck(ArrayList<Card> deck) {
         this.deck = deck;
     }
+
+
+    public void musicStart() {
+        int delay = 71400; // Song Length
+        try {
+            File musicFile = new File("img/Music/music.wav");
+            Clip music = AudioSystem.getClip();
+            music.open(AudioSystem.getAudioInputStream(musicFile));
+            music.start();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+
 }
+
+
+
