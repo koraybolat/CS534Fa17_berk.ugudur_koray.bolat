@@ -12,7 +12,8 @@ Screenshot of our game:
 
 All of the drawings were made by us.
 
-(Music Added)
+Music Added!
+[Pirates of the Caribbean Theme - Acoustic, Classical Fingerstyle Guitar by Thomas Zwijsen](https://www.youtube.com/watch?v=TkMtbGzVSMg)
 
 ![Screenshot](report/ss2.png)
 
